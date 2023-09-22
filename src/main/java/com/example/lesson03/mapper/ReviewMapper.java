@@ -9,7 +9,5 @@ public interface ReviewMapper {
 
 	//input()
 	//output(controller에게 주는 것) : Review(단건)
-	public Review selectReview() {
-		return ;
-	}
+	public Review selectReview(int id);
 }
