@@ -26,5 +26,12 @@ public interface ReviewMapper {
 			@Param("point") Double point, 
 			@Param("review") String review);
 	
+	//ex03/1
+	public int updateReviewById(
+			@Param("id") int id, 
+			@Param("review") String review);
+
+	//ex04/1
+	public void deleteReviewById(int id);
 	
 }

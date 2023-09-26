@@ -8,22 +8,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.lesson03.bo.ReviewBO;
 
 @RestController
-public class Lesson03Ex03RestController {
+public class Lesson03Ex04RestController {
 
 	@Autowired
 	private ReviewBO reviewBO;
 	
-	//url: http://localhost/lesson03/ex03?id=23&review=도미노피자는맛잇다
-	@RequestMapping("/lesson03/ex03")
-	public String ex03(
-			@RequestParam("id")int id,
-			@RequestParam("review") String review) {
+	//http://localhost/lesson03/ex04?id=22
+	@RequestMapping("/lesson03/ex04")
+	public String ex04(
+			@RequestParam("id") int id) {
 		
-		int rowCount = reviewBO.updateReviewById(id, review);
+		reviewBO.deleteReviewById(id);
 		
-		return "변경 완료: " + rowCount; //String-> HTML
+		return "삭제 성공";
 	}
-	
-	
 	
 }

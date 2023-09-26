@@ -32,4 +32,19 @@ public class ReviewBO {
 		return reviewMapper.insertReviewAsField(storeId, menu, userName, point, review);  //mapper에 요청한 값을 return한다
 	}
 	
+	//ex03/1
+	//input: id, review
+	//output: int(성공된 행의 개수)
+	public int updateReviewById(int id, String review) {
+		return reviewMapper.updateReviewById(id, review);
+	}
+	
+	
+	//ex04/1
+	//input: id
+	//output: 
+	public void deleteReviewById(int id) {
+		reviewMapper.deleteReviewById(id);
+	}
+	
 }
