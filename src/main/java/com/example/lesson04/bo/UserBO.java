@@ -18,7 +18,7 @@ public class UserBO {
 		userMapper.insertUser(name, yyyymmdd, email, introduce);
 	}
 	
-	//input:x
+	//input: x
 	//output:User(최신가입자1명)
 	public User getLatestUser() {
 		return userMapper.selectLatestUser();
