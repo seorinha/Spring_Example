@@ -16,4 +16,7 @@ public interface UserMapper {
 	
 	
 	public User selectLatestUser();
+	
+	//lesson06ex02
+	public boolean existUserByName(String name);
 }
