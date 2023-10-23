@@ -29,5 +29,22 @@ public class Lesson07Ex01RestController {
 		
 	}
 	
+	//U: update
+	@GetMapping("/2")
+	public StudentEntity update() {
+		//id가 4번인 data의 dreamjob을 변경
+		//JSON
+		return studentBO.updateStudentDreamJobById(4, "디자이너");
+	
+	}
+	
+	//D: delete
+	@GetMapping("/3")
+	public String delete() {
+		//id :4 제거 
+		studentBO.deleteStudentById(4);
+		return "삭제완료";
+	}
+	
 	
 }
