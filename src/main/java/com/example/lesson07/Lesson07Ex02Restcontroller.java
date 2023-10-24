@@ -21,7 +21,7 @@ public class Lesson07Ex02Restcontroller {
 	//조회하는 다양한 방법
 	@GetMapping("/1")
 	public List<StudentEntity> getStudentList() {
-		
+
 		//1. 전체 조회(기본으로 제공되는 메소드)
 		//return studentRepository.findAll();
 		
@@ -47,7 +47,7 @@ public class Lesson07Ex02Restcontroller {
 		//return studentRepository.findByStartingWith("유");
 		
 		//9. id 1 ~ 5 인 데이터 조회(between)
-		//return studentRepository.findByIdBetween(1, 5);
+		return studentRepository.findByIdBetween(1, 5);
 	}
 	
 	@GetMapping("/2")
