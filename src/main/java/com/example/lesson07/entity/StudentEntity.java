@@ -23,7 +23,7 @@ import lombok.ToString;
 @Getter
 @Builder(toBuilder = true) //setter의 대용 , toBuilder = true : 수정을 허용한다는 의미
 @Entity(name = "new_student") //이 객체는 entity다.(jpa와 db의 통신)
-@Table(name="new_student")
+@Table(name = "new_student")
 public class StudentEntity {
 
 	@Id

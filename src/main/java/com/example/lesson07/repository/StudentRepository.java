@@ -21,24 +21,20 @@ public interface StudentRepository extends JpaRepository<StudentEntity, Integer>
 	
 	//JPQL문법 - ex02/1
 	public List<StudentEntity> findAllByOrderByIdDesc();
-	
 	public List<StudentEntity> findTop3ByOrderByIdDesc();
-	
 	public List<StudentEntity> findByName(String name);
-	
 	public List<StudentEntity> findByNameIn(List<String> names);
-	
 	public List<StudentEntity> findByNameAndDreamJob(String name, String dreamJob);
-	
 	public List<StudentEntity> findByEmailContaining(String email);
-	
-	public List<StudentEntity> findByStartingWith(String name);
-	
+	public List<StudentEntity> findByNameStartingWith(String name);
 	public List<StudentEntity> findByIdBetween(int start, int end);
 	
 	//ex02/2
 	//1. JPQL : DB에 직접 안가고 entity로 조회를 하고있다
-	@Query(value = "select st from new_student st where st.dreamJob = :dreamJob") //진짜 쿼리문이 아니라 entity한테 조회하는걸 쿼리문처럼 만든 것
+	//@Query(value = "select st from new_student st where st.dreamJob = :dreamJob") //진짜 쿼리문이 아니라 entity한테 조회하는걸 쿼리문처럼 만든 것
+	
+	//2. native query로 조회 : 순수하게, 날것 그대로 조회하겠다
+	@Query(value = "select * from `new_student` where dreamJob = :dreamJob", nativeQuery = true)
 	public List<StudentEntity> findByDreamJob(@Param("dreamJob") String dreamJob);
 	
 	

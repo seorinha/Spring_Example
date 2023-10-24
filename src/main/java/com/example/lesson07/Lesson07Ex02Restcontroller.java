@@ -44,10 +44,10 @@ public class Lesson07Ex02Restcontroller {
 		//return studentRepository.findByEmailContaining("naver");
 		
 		//8. name이 '유'로 시작하는 데이터 조회(like문) - 유%
-		//return studentRepository.findByStartingWith("유");
+		return studentRepository.findByNameStartingWith("유");
 		
 		//9. id 1 ~ 5 인 데이터 조회(between)
-		return studentRepository.findByIdBetween(1, 5);
+		//return studentRepository.findByIdBetween(1, 5);
 	}
 	
 	@GetMapping("/2")
